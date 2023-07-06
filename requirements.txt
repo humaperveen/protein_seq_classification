@@ -3,7 +3,7 @@ joblib
 pandas
 numpy
 scikit-learn == 1.2.2
-re == 2.2.1
+regex
 plotly
 collections
 base64
