@@ -9,7 +9,7 @@ import joblib
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import pandas as pd
-import regex
+import re
 import plotly.express as px
 from collections import Counter
 
@@ -66,7 +66,7 @@ def predict_seq(seq):
   if seq.lower():
     seq = seq.upper()
     # remove uncommon amino acids
-    seq =regex.sub(r"[XUZOB]", "", str(seq))
+    seq =re.sub(r"[XUZOB]", "", str(seq))
     # Preprocess the input seq using the loaded CountVectorizer
     seq_dtm = model['vect'].transform([seq])
 
@@ -78,7 +78,7 @@ def predict_seq(seq):
     confidence = score[0,ids]
   else:
     # remove uncommon amino acids
-    seq =regex.sub(r"[XUZOB]", "", str(seq))
+    seq =re.sub(r"[XUZOB]", "", str(seq))
     # Preprocess the input seq using the loaded CountVectorizer
     seq_dtm = model['vect'].transform([seq])
 
