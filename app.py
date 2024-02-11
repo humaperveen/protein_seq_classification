@@ -12,6 +12,7 @@ import pandas as pd
 import re
 import plotly.express as px
 from collections import Counter
+from xgboost import XGBClassifier
 
 # # set background image
 import base64
